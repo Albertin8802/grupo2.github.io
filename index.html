@@ -1,1 +1,245 @@
-<h1>Grupo 2</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Tours - Descubre Experiencias Únicas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="css/estilos.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-custom">
+                    <i class="fa-solid fa-earth-americas" style="color: #1fa87f;"></i>
+                    <span class="logo-text">Mundo Tours</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="destinos.html">Destinos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reserva.html">Reservar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reservas.html">Mis Reservas</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-unified-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Descubre el Mundo con Nosotros</h1>
+                        <p class="hero-subtitle">Experiencias únicas, destinos increíbles y momentos inolvidables te esperan en cada rincón del planeta</p>
+                        <div class="hero-buttons">
+                            <a href="destinos.html" class="btn btn-primary btn-lg me-3">
+                                <i class="fas fa-compass me-2"></i>Explorar Destinos
+                            </a>
+                            <a href="reserva.html" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-rocket me-2"></i>Empezar Aventura
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="stat-item">
+                                    <h3>10K+</h3>
+                                    <p>Viajeros Felices</p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="stat-item">
+                                    <h3>50+</h3>
+                                    <p>Destinos Únicos</p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="stat-item">
+                                    <h3>98%</h3>
+                                    <p>Satisfacción</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="destinations-carousel">
+                        <div id="carouselDestinos" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselDestinos" data-bs-slide-to="0" class="active"></button>
+                                <button type="button" data-bs-target="#carouselDestinos" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#carouselDestinos" data-bs-slide-to="2"></button>
+                                <button type="button" data-bs-target="#carouselDestinos" data-bs-slide-to="3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="img/destinos/imagen1.png" class="d-block w-100" alt="Machu Picchu">
+                                    <div class="carousel-caption">
+                                        <h5>Machu Picchu</h5>
+                                        <p>Maravilla del mundo en los Andes</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/destinos/imagen2.png" class="d-block w-100" alt="Lago Titicaca">
+                                    <div class="carousel-caption">
+                                        <h5>Lago Titicaca</h5>
+                                        <p>Lago navegable más alto del mundo</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/destinos/imagen3.png" class="d-block w-100" alt="Líneas de Nazca">
+                                    <div class="carousel-caption">
+                                        <h5>Líneas de Nazca</h5>
+                                        <p>Misterios ancestrales en el desierto</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/destinos/imagen4.png" class="d-block w-100" alt="Selva Amazónica">
+                                    <div class="carousel-caption">
+                                        <h5>Selva Amazónica</h5>
+                                        <p>Biodiversidad única en el planeta</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselDestinos" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselDestinos" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+                        </div>
+                        
+                        <div class="destination-grid">
+                            <div class="destination-mini-card">
+                                <div class="mini-icon">
+                                    <i class="fas fa-mountain"></i>
+                                </div>
+                                <span>Aventura</span>
+                            </div>
+                            <div class="destination-mini-card">
+                                <div class="mini-icon">
+                                    <i class="fas fa-umbrella-beach"></i>
+                                </div>
+                                <span>Relax</span>
+                            </div>
+                            <div class="destination-mini-card">
+                                <div class="mini-icon">
+                                    <i class="fas fa-city"></i>
+                                </div>
+                                <span>Ciudad</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">¿Por Qué Elegirnos?</h2>
+                <p class="section-subtitle">Te ofrecemos la mejor experiencia de viaje con servicios exclusivos</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h4>Reserva con Confianza</h4>
+                        <p>Recibe asistencia las 24 horas del día, los 7 días de la semana. Nuestro equipo está siempre disponible para garantizar tu tranquilidad y seguridad durante todo tu viaje.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Asistencia 24/7</li>
+                            <li><i class="fas fa-check"></i> Seguro de viaje incluido</li>
+                            <li><i class="fas fa-check"></i> Reseñas verificadas</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <h4>Máxima Comodidad</h4>
+                        <p>Explora alojamientos seleccionados meticulosamente en función del confort y calidad que mereces para la escapada perfecta y de ensueño.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Alojamientos premium</li>
+                            <li><i class="fas fa-check"></i> Servicios personalizados</li>
+                            <li><i class="fas fa-check"></i> Experiencias exclusivas</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>Flexibilidad Total</h4>
+                        <p>Gracias a nuestras estadías flexibles y políticas de cancelación, es más fácil que hagas una nueva reserva o modifiques tus planes sin complicaciones.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Cancelación gratuita</li>
+                            <li><i class="fas fa-check"></i> Modificaciones flexibles</li>
+                            <li><i class="fas fa-check"></i> Mejores precios garantizados</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">
+                        <div class="logo-custom">
+                            <i class="fa-solid fa-earth-americas" style="color: #1fa87f;"></i>
+                            <span class="logo-text">Mundo Tours</span>
+                        </div>
+                    </div>
+                    <p class="mt-3">Tu agencia de viajes de confianza. Creemos que viajar te deja sin palabras y te convierte en narrador de historias inolvidables.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Legal</h5>
+                    <div class="footer-links">
+                        <a href="#"><i class="fas fa-chevron-right me-2"></i>Términos y Condiciones</a>
+                        <a href="#"><i class="fas fa-chevron-right me-2"></i>Política de Privacidad</a>
+                        <a href="#"><i class="fas fa-chevron-right me-2"></i>Política de Cookies</a>
+                        <a href="#"><i class="fas fa-chevron-right me-2"></i>Aviso Legal</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contacto</h5>
+                    <div class="contact-info">
+                        <p><i class="fab fa-whatsapp me-2"></i>+51 984 286 575</p>
+                        <p><i class="fas fa-envelope me-2"></i>mundotour@tours.xyz</p>
+                        <p><i class="fas fa-map-marker-alt me-2"></i>Lima, Perú</p>
+                        <p><i class="fas fa-clock me-2"></i>24/7 Disponible</p>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

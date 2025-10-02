@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Tours - Destinos Perú</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="css/destinos.css" rel="stylesheet">
+    <link href="css/estilos.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-custom">
+                    <i class="fa-solid fa-earth-americas" style="color: #1fa87f;"></i>
+                    <span class="logo-text">Mundo Tours</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="destinos.html">Destinos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reserva.html">Reservar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reservas.html">Mis Reservas</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="destinos-container">
+        <div class="container">
+            <div class="destinos-header text-center mb-5">
+                <h1 class="destinos-title">Descubre el Perú</h1>
+                <p class="destinos-subtitle">Explora los destinos más fascinantes de nuestro país con experiencias únicas</p>
+            </div>
+
+            <div class="filtros-section mb-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="filtros-card">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">
+                                            <i class="fas fa-filter me-2"></i>Tipo de Experiencia
+                                        </label>
+                                        <select class="form-select" id="filtroExperiencia">
+                                            <option value="">Todas las experiencias</option>
+                                            <option value="aventura">Aventura</option>
+                                            <option value="cultura">Cultura</option>
+                                            <option value="naturaleza">Naturaleza</option>
+                                            <option value="relax">Relax</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">
+                                            <i class="fas fa-sort me-2"></i>Ordenar por
+                                        </label>
+                                        <select class="form-select" id="filtroOrden">
+                                            <option value="precio">Precio: Menor a Mayor</option>
+                                            <option value="precio-desc">Precio: Mayor a Menor</option>
+                                            <option value="nombre">Nombre A-Z</option>
+                                            <option value="noches">Duración</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destinos-grid">
+                <div class="row" id="gridDestinos">
+                    <div class="col-lg-4 col-md-6 mb-4" data-experiencia="aventura cultura">
+                        <div class="destino-card">
+                            <div class="destino-image">
+                                <img src="img/destinos/destino1.png" alt="Machu Picchu">
+                                <div class="destino-badge">Más Popular</div>
+                                <div class="destino-overlay">
+                                    <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#modalDestino1">
+                                        <i class="fas fa-eye me-1"></i>Ver Detalles
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="destino-content">
+                                <div class="destino-header">
+                                    <h3>Machu Picchu</h3>
+                                    <span class="destino-precio">S/ 800</span>
+                                </div>
+                                <p class="destino-desc">Maravilla del mundo moderno en los Andes peruanos</p>
+                                <div class="destino-info">
+                                    <div class="info-item">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Cuzco</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-moon"></i>
+                                        <span>4 noches</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-hiking"></i>
+                                        <span>Aventura</span>
+                                    </div>
+                                </div>
+                                <div class="destino-actions">
+                                    <button class="btn btn-primary w-100" onclick="reservarDestino('Machu Picchu - Cuzco', 800)">
+                                        <i class="fas fa-calendar-check me-2"></i>Reservar Ahora
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4" data-experiencia="naturaleza cultura">
+                        <div class="destino-card">
+                            <div class="destino-image">
+                                <img src="img/destinos/destino2.png" alt="Lago Titicaca">
+                                <div class="destino-overlay">
+                                    <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#modalDestino2">
+                                        <i class="fas fa-eye me-1"></i>Ver Detalles
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="destino-content">
+                                <div class="destino-header">
+                                    <h3>Lago Titicaca</h3>
+                                    <span class="destino-precio">S/ 600</span>
+                                </div>
+                                <p class="destino-desc">Lago navegable más alto del mundo con cultura aimara</p>
+                                <div class="destino-info">
+                                    <div class="info-item">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Puno</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-moon"></i>
+                                        <span>3 noches</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-water"></i>
+                                        <span>Naturaleza</span>
+                                    </div>
+                                </div>
+                                <div class="destino-actions">
+                                    <button class="btn btn-primary w-100" onclick="reservarDestino('Lago Titicaca - Puno', 600)">
+                                        <i class="fas fa-calendar-check me-2"></i>Reservar Ahora
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4" data-experiencia="cultura historia">
+                        <div class="destino-card">
+                            <div class="destino-image">
+                                <img src="img/destinos/destino3.png" alt="Chan Chan">
+                                <div class="destino-overlay">
+                                    <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#modalDestino3">
+                                        <i class="fas fa-eye me-1"></i>Ver Detalles
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="destino-content">
+                                <div class="destino-header">
+                                    <h3>Chan Chan</h3>
+                                    <span class="destino-precio">S/ 450</span>
+                                </div>
+                                <p class="destino-desc">Ciudad de adobe más grande de América precolombina</p>
+                                <div class="destino-info">
+                                    <div class="info-item">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Trujillo</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-moon"></i>
+                                        <span>2 noches</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-landmark"></i>
+                                        <span>Historia</span>
+                                    </div>
+                                </div>
+                                <div class="destino-actions">
+                                    <button class="btn btn-primary w-100" onclick="reservarDestino('Chan Chan - Trujillo', 450)">
+                                        <i class="fas fa-calendar-check me-2"></i>Reservar Ahora
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4" data-experiencia="aventura naturaleza">
+                        <div class="destino-card">
+                            <div class="destino-image">
+                                <img src="img/destinos/destino4.png" alt="Kuelap">
+                                <div class="destino-overlay">
+                                    <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#modalDestino4">
+                                        <i class="fas fa-eye me-1"></i>Ver Detalles
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="destino-content">
+                                <div class="destino-header">
+                                    <h3>Kuelap</h3>
+                                    <span class="destino-precio">S/ 500</span>
+                                </div>
+                                <p class="destino-desc">Fortaleza de piedra en la selva alta amazónica</p>
+                                <div class="destino-info">
+                                    <div class="info-item">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Amazonas</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-moon"></i>
+                                        <span>3 noches</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-mountain"></i>
+                                        <span>Aventura</span>
+                                    </div>
+                                </div>
+                                <div class="destino-actions">
+                                    <button class="btn btn-primary w-100" onclick="reservarDestino('Kuelap - Amazonas', 500)">
+                                        <i class="fas fa-calendar-check me-2"></i>Reservar Ahora
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4" data-experiencia="misterio aventura">
+                        <div class="destino-card">
+                            <div class="destino-image">
+                                <img src="img/destinos/destino5.png" alt="Líneas de Nazca">
+                                <div class="destino-badge">Nuevo</div>
+                                <div class="destino-overlay">
+                                    <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#modalDestino5">
+                                        <i class="fas fa-eye me-1"></i>Ver Detalles
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="destino-content">
+                                <div class="destino-header">
+                                    <h3>Líneas de Nazca</h3>
+                                    <span class="destino-precio">S/ 400</span>
+                                </div>
+                                <p class="destino-desc">Misteriosos geoglifos en el desierto peruano</p>
+                                <div class="destino-info">
+                                    <div class="info-item">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Ica</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-moon"></i>
+                                        <span>2 noches</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-question-circle"></i>
+                                        <span>Misterio</span>
+                                    </div>
+                                </div>
+                                <div class="destino-actions">
+                                    <button class="btn btn-primary w-100" onclick="reservarDestino('Líneas de Nazca - Ica', 400)">
+                                        <i class="fas fa-calendar-check me-2"></i>Reservar Ahora
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal fade" id="modalDestino1" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Machu Picchu - Cuzco</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="img/destinos/destino1.png" class="img-fluid rounded" alt="Machu Picchu">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>S/ 800 por persona</h4>
+                            <p><strong>Duración:</strong> 4 noches / 5 días</p>
+                            <p><strong>Incluye:</strong></p>
+                            <ul>
+                                <li>Alojamiento en hotel 3 estrellas</li>
+                                <li>Tickets de ingreso a Machu Picchu</li>
+                                <li>Guía turístico especializado</li>
+                                <li>Transporte Cuzco - Machu Picchu</li>
+                                <li>3 desayunos y 2 almuerzos</li>
+                            </ul>
+                            <p>Descubre la ciudadela perdida de los Incas, una de las 7 maravillas del mundo moderno. Vive la magia de la arquitectura incaica en las alturas de los Andes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" onclick="reservarDestino('Machu Picchu - Cuzco', 800)" data-bs-dismiss="modal">
+                        <i class="fas fa-calendar-check me-2"></i>Reservar Este Destino
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDestino2" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Lago Titicaca - Puno</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="img/destinos/destino2.png" class="img-fluid rounded" alt="Lago Titicaca">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>S/ 600 por persona</h4>
+                            <p><strong>Duración:</strong> 3 noches / 4 días</p>
+                            <p><strong>Incluye:</strong></p>
+                            <ul>
+                                <li>Alojamiento en hotel frente al lago</li>
+                                <li>Tour a las islas flotantes de los Uros</li>
+                                <li>Visita a la isla de Taquile</li>
+                                <li>Paseo en bote tradicional</li>
+                                <li>2 desayunos y 1 almuerzo típico</li>
+                            </ul>
+                            <p>Experimenta la cultura aimara en el lago navegable más alto del mundo. Conoce las fascinantes islas flotantes y sus tradiciones ancestrales.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" onclick="reservarDestino('Lago Titicaca - Puno', 600)" data-bs-dismiss="modal">
+                        <i class="fas fa-calendar-check me-2"></i>Reservar Este Destino
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDestino3" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Chan Chan - Trujillo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="img/destinos/destino3.png" class="img-fluid rounded" alt="Chan Chan">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>S/ 450 por persona</h4>
+                            <p><strong>Duración:</strong> 2 noches / 3 días</p>
+                            <p><strong>Incluye:</strong></p>
+                            <ul>
+                                <li>Alojamiento en hotel céntrico</li>
+                                <li>Tour completo por Chan Chan</li>
+                                <li>Visita a las Huacas del Sol y la Luna</li>
+                                <li>Guía arqueológico especializado</li>
+                                <li>2 desayunos</li>
+                            </ul>
+                            <p>Explora la capital del reino Chimú, la ciudad de adobe más grande de América precolombina. Descubre los secretos de esta civilización milenaria.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" onclick="reservarDestino('Chan Chan - Trujillo', 450)" data-bs-dismiss="modal">
+                        <i class="fas fa-calendar-check me-2"></i>Reservar Este Destino
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDestino4" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Kuelap - Amazonas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="img/destinos/destino4.png" class="img-fluid rounded" alt="Kuelap">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>S/ 500 por persona</h4>
+                            <p><strong>Duración:</strong> 3 noches / 4 días</p>
+                            <p><strong>Incluye:</strong></p>
+                            <ul>
+                                <li>Alojamiento en lodge ecológico</li>
+                                <li>Teleférico a la fortaleza de Kuelap</li>
+                                <li>Tour por la catarata de Gocta</li>
+                                <li>Guía local especializado</li>
+                                <li>3 desayunos y 2 almuerzos</li>
+                            </ul>
+                            <p>Admira la impresionante fortaleza de piedra de los Chachapoyas, conocida como el "Machu Picchu del norte". Combina historia y naturaleza en la selva alta.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" onclick="reservarDestino('Kuelap - Amazonas', 500)" data-bs-dismiss="modal">
+                        <i class="fas fa-calendar-check me-2"></i>Reservar Este Destino
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDestino5" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Líneas de Nazca - Ica</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="img/destinos/destino5.png" class="img-fluid rounded" alt="Líneas de Nazca">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>S/ 400 por persona</h4>
+                            <p><strong>Duración:</strong> 2 noches / 3 días</p>
+                            <p><strong>Incluye:</strong></p>
+                            <ul>
+                                <li>Alojamiento en hotel con piscina</li>
+                                <li>Sobrevuelo a las Líneas de Nazca</li>
+                                <li>Tour a las Islas Ballestas</li>
+                                <li>Paseo en buggy por las dunas</li>
+                                <li>2 desayunos y 1 almuerzo</li>
+                            </ul>
+                            <p>Descifra los misterios de los geoglifos milenarios desde el aire. Combina aventura en el desierto con la observación de fauna marina en las Islas Ballestas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" onclick="reservarDestino('Líneas de Nazca - Ica', 400)" data-bs-dismiss="modal">
+                        <i class="fas fa-calendar-check me-2"></i>Reservar Este Destino
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+   <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">
+                        <div class="logo-custom">
+                            <i class="fa-solid fa-earth-americas" style="color: #1fa87f;"></i>
+                            <span class="logo-text">Mundo Tours</span>
+                        </div>
+                    </div>
+                    <p class="mt-3">Tu agencia de viajes de confianza. Creemos que viajar te deja sin palabras y te convierte en narrador de historias inolvidables.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Legal</h5>
+                    <div class="footer-links">
+                        <a href="#"><i class="fas fa-chevron-right me-2"></i>Términos y Condiciones</a>
+                        <a href="#"><i class="fas fa-chevron-right me-2"></i>Política de Privacidad</a>
+                        <a href="#"><i class="fas fa-chevron-right me-2"></i>Política de Cookies</a>
+                        <a href="#"><i class="fas fa-chevron-right me-2"></i>Aviso Legal</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contacto</h5>
+                    <div class="contact-info">
+                        <p><i class="fab fa-whatsapp me-2"></i>+51 984 286 575</p>
+                        <p><i class="fas fa-envelope me-2"></i>mundotour@tours.xyz</p>
+                        <p><i class="fas fa-map-marker-alt me-2"></i>Lima, Perú</p>
+                        <p><i class="fas fa-clock me-2"></i>24/7 Disponible</p>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/destinos.js"></script>
+</body>
+</html>

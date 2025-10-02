@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Tours - Reserva</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link href="css/estilos.css" rel="stylesheet">
+            <link href="css/reserva.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-custom">
+                    <i class="fa-solid fa-earth-americas" style="color: #1fa87f;"></i>
+                    <span class="logo-text">Mundo Tours</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="destinos.html">Destinos</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="reserva.html">Reservar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reservas.html">Mis Reservas</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="reserva-container">
+        <div class="container">
+            <div class="reserva-header text-center mb-5">
+                <h1 class="reserva-title">Reserva tu Aventura</h1>
+                <p class="reserva-subtitle">Completa el formulario y prepárate para una experiencia inolvidable</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="reserva-card">
+                        <form id="formReserva" class="row g-4 needs-validation" novalidate>
+                            <div class="col-12">
+                                <h4 class="section-title">
+                                    <i class="fas fa-user me-2"></i>Información Personal
+                                </h4>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="nombre" class="form-label">Nombre completo</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                        <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre completo" required>
+                                    </div>
+                                    <div class="invalid-feedback">Por favor ingresa tu nombre completo</div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="dni" class="form-label">DNI o Pasaporte</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-id-card"></i></span>
+                                        <input type="text" class="form-control" id="dni" minlength="8" placeholder="Número de documento" required>
+                                    </div>
+                                    <div class="invalid-feedback">Mínimo 8 caracteres requeridos</div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                        <input type="email" class="form-control" id="email" placeholder="tu@email.com" required>
+                                    </div>
+                                    <div class="invalid-feedback">Por favor ingresa un email válido</div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mt-4">
+                                <h4 class="section-title">
+                                    <i class="fas fa-suitcase me-2"></i>Detalles del Viaje
+                                </h4>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="destino" class="form-label">Destino</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                                        <select class="form-select" id="destino" required>
+                                            <option value="">Seleccionar destino</option>
+                                            <option value="Machu Picchu - Cuzco">Machu Picchu - Cuzco</option>
+                                            <option value="Lago Titicaca - Puno">Lago Titicaca - Puno</option>
+                                            <option value="Chan Chan - Trujillo">Chan Chan - Trujillo</option>
+                                            <option value="Kuelap - Amazonas">Kuelap - Amazonas</option>
+                                            <option value="Líneas de Nazca - Ica">Líneas de Nazca - Ica</option>
+                                        </select>
+                                    </div>
+                                    <div class="invalid-feedback">Por favor selecciona un destino</div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="fechaSalida" class="form-label">Fecha de salida</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                                        <input type="date" class="form-control" id="fechaSalida" required>
+                                    </div>
+                                    <div class="invalid-feedback">Selecciona una fecha válida</div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="noches" class="form-label">Número de noches</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-moon"></i></span>
+                                        <input type="number" class="form-control" id="noches" min="1" max="21" placeholder="1-21 noches" required>
+                                    </div>
+                                    <div class="invalid-feedback">Selecciona entre 1 y 21 noches</div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="pasajeros" class="form-label">Número de pasajeros</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-users"></i></span>
+                                        <input type="number" class="form-control" id="pasajeros" min="1" max="8" placeholder="1-8 pasajeros" required>
+                                    </div>
+                                    <div class="invalid-feedback">Selecciona entre 1 y 8 pasajeros</div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label">Tipo de habitación</label>
+                                    <div class="habitacion-options">
+                                        <div class="form-check-card">
+                                            <input class="form-check-input" type="radio" name="habitacion" id="simple" value="simple" required>
+                                            <label class="form-check-label" for="simple">
+                                                <i class="fas fa-bed"></i>
+                                                <span>Simple</span>
+                                                <small>Ideal para viajeros individuales</small>
+                                            </label>
+                                        </div>
+                                        <div class="form-check-card">
+                                            <input class="form-check-input" type="radio" name="habitacion" id="doble" value="doble">
+                                            <label class="form-check-label" for="doble">
+                                                <i class="fas fa-bed"></i>
+                                                <span>Doble</span>
+                                                <small>Perfecta para parejas</small>
+                                            </label>
+                                        </div>
+                                        <div class="form-check-card">
+                                            <input class="form-check-input" type="radio" name="habitacion" id="triple" value="triple">
+                                            <label class="form-check-label" for="triple">
+                                                <i class="fas fa-bed"></i>
+                                                <span>Triple</span>
+                                                <small>Para grupos pequeños</small>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="invalid-feedback">Selecciona un tipo de habitación</div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label">Servicios adicionales</label>
+                                    <div class="servicios-grid">
+                                        <div class="servicio-card">
+                                            <input class="form-check-input" type="checkbox" id="traslados" value="50">
+                                            <label class="form-check-label" for="traslados">
+                                                <i class="fas fa-shuttle-van"></i>
+                                                <div>
+                                                    <span>Traslados</span>
+                                                    <small>S/ 50 por persona</small>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="servicio-card">
+                                            <input class="form-check-input" type="checkbox" id="cityTour" value="30">
+                                            <label class="form-check-label" for="cityTour">
+                                                <i class="fas fa-map-marked-alt"></i>
+                                                <div>
+                                                    <span>City Tour</span>
+                                                    <small>S/ 30 por persona</small>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="servicio-card">
+                                            <input class="form-check-input" type="checkbox" id="seguro" value="25">
+                                            <label class="form-check-label" for="seguro">
+                                                <i class="fas fa-shield-alt"></i>
+                                                <div>
+                                                    <span>Seguro de viaje</span>
+                                                    <small>S/ 25 por persona</small>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary btn-lg w-100">
+                                    <i class="fas fa-paper-plane me-2"></i>Confirmar Reserva
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="resumen-sidebar">
+                        <div class="resumen-card">
+                            <h4 class="resumen-title">
+                                <i class="fas fa-receipt me-2"></i>Resumen de Reserva
+                            </h4>
+                            <div id="resumenReserva" class="resumen-content">
+                                <div class="resumen-placeholder">
+                                    <i class="fas fa-info-circle"></i>
+                                    <p>Complete el formulario para ver el resumen de su reserva</p>
+                                </div>
+                            </div>
+                            <div class="resumen-total">
+                                <div class="total-line">
+                                    <span>Total a pagar:</span>
+                                    <span id="totalPagar">S/ 0.00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <h5><i class="fas fa-lightbulb me-2"></i>Recomendaciones</h5>
+                            <ul>
+                                <li>Revisa cuidadosamente tus datos personales</li>
+                                <li>Confirma la fecha de tu viaje</li>
+                                <li>Los precios incluyen todos los impuestos</li>
+                                <li>Recibirás confirmación por email</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+   <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">
+                        <div class="logo-custom">
+                            <i class="fa-solid fa-earth-americas" style="color: #1fa87f;"></i>
+                            <span class="logo-text">Mundo Tours</span>
+                        </div>
+                    </div>
+                    <p class="mt-3">Tu agencia de viajes de confianza. Creemos que viajar te deja sin palabras y te convierte en narrador de historias inolvidables.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Legal</h5>
+                    <div class="footer-links">
+                        <a href="#"><i class="fas fa-chevron-right me-2"></i>Términos y Condiciones</a>
+                        <a href="#"><i class="fas fa-chevron-right me-2"></i>Política de Privacidad</a>
+                        <a href="#"><i class="fas fa-chevron-right me-2"></i>Política de Cookies</a>
+                        <a href="#"><i class="fas fa-chevron-right me-2"></i>Aviso Legal</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contacto</h5>
+                    <div class="contact-info">
+                        <p><i class="fab fa-whatsapp me-2"></i>+51 984 286 575</p>
+                        <p><i class="fas fa-envelope me-2"></i>mundotour@tours.xyz</p>
+                        <p><i class="fas fa-map-marker-alt me-2"></i>Lima, Perú</p>
+                        <p><i class="fas fa-clock me-2"></i>24/7 Disponible</p>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/formulario.js"></script>
+</body>
+</html>
